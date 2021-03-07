@@ -2,13 +2,12 @@
 
 > react-post-markdown A markdown editor based on React
 
-- [demo](https://md.kkfor.com)
 - [github](https://github.com/PostNZT/react-post-toolbar)
 
 ### Install
 
 ```js
-npm install react-post-markdown -S
+npm install react-post-markdown --save
 ```
 
 ### Use
