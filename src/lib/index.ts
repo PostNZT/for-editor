@@ -13,11 +13,20 @@ export interface ICONFIG {
 
 export const CONFIG: ICONFIG = {
   language: {
-    'zh-CN': zhCN,
     en,
+    'zh-CN': zhCN,
   },
-  langList: ['zh-CN', 'en'],
+  langList: ['en', 'zh-CN'],
   toolbar: {
+    bold: true,
+    italic: true,
+    qoute: true,
+    orderedlist: true,
+    unorderedlist: true,
+    c1: true,
+    c2: true,
+    c3: true,
+    emoji: true,
     h1: true,
     h2: true,
     h3: true,

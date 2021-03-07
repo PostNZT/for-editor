@@ -63,3 +63,7 @@
   content: "\e62b";
 }
 
+.for-bold::before {
+  content: "\e62c";
+}
+

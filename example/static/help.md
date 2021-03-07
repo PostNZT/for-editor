@@ -1,17 +1,17 @@
-> `for-editor` is a markdown editor
+> `react-post-markdown` is a markdown editor
 
-# for-editor
-
-this is a markdown editor
-
-## for-editor
+# react-post-markdown
 
 this is a markdown editor
 
-### for-editor
+## react-post-markdown
+
+this is a markdown editor
+
+### react-post-markdown
 
 ```js
-const editor = 'for-editor'
+const editor = 'react-post-markdown'
 ```
 
 - item1
@@ -31,4 +31,4 @@ const editor = 'for-editor'
 
 | title      | description     |
 | ---------- | --------------- |
-| for-editor | markdown editor |
+| react-post-markdown | markdown editor |

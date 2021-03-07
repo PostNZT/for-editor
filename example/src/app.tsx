@@ -53,13 +53,14 @@ class App extends Component<{}, IS> {
     })
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   handleSave(value: string) {
-    console.log('触发保存事件', value)
+    // console.log('Saved Event', value)
   }
 
   addImg($file: File) {
     this.$vm.current.$img2Url($file.name, 'file_url')
-    console.log($file)
+    // console.log(File)
   }
 
   render() {
@@ -68,11 +69,11 @@ class App extends Component<{}, IS> {
     return (
       <div className={styles.main}>
         <div className={styles.top}>
-          <h1>for-editor</h1>
+          <h1>react-post-markdown</h1>
           <ul>
             <li>
               <a
-                href="https://github.com/kkfor/for-editor"
+                href="https://github.com/PostNZT/react-post-markdown"
                 target="_blank"
                 rel="noopener noreferrer"
               >

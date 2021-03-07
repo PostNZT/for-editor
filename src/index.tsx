@@ -11,6 +11,15 @@ import './lib/css/index.scss'
 import { CONFIG } from './lib'
 
 export interface IToolbar {
+  bold?: boolean
+  italic?: boolean
+  qoute?: boolean
+  orderedlist?: boolean
+  unorderedlist?: boolean
+  c1?: boolean
+  c2?: boolean
+  c3?: boolean
+  emoji?: boolean
   h1?: boolean
   h2?: boolean
   h3?: boolean
@@ -28,6 +37,16 @@ export interface IToolbar {
 
 export interface IWords {
   placeholder?: string
+  bold?: string
+  italic?: string
+  qoute?: string
+  orderedlist?: string
+  unorderedlist?: string
+  c1?: string
+  c2?: string
+  c3?: string
+  emoji?: string
+  h?: string
   h1?: string
   h2?: string
   h3?: string
@@ -139,39 +158,35 @@ class MdEditor extends React.Component<IP, IS> {
       }, 500)
     }
     if (subfield !== preProps.subfield && this.state.subfield !== subfield) {
-      this.setState({ subfield });
+      this.setState({ subfield })
     }
     if (preview !== preProps.preview && this.state.preview !== preview) {
-      this.setState({ preview });
+      this.setState({ preview })
     }
     if (expand !== preProps.expand && this.state.expand !== expand) {
-      this.setState({ expand });
+      this.setState({ expand })
     }
   }
 
   initLanguage = (): void => {
     const { language } = this.props
-    const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'zh-CN'
+    const lang = CONFIG.langList.indexOf(language) >= 0 ? language : 'en'
     this.setState({
       words: CONFIG.language[lang]
     })
   }
 
-  // 输入框改变
   handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>): void => {
     const value = e.target.value
     this.props.onChange(value)
   }
 
-  // 保存记录
   saveHistory = (value: string): void => {
     let { history, historyIndex } = this.state
-    // 撤销后修改，删除当前以后记录
     history.splice(historyIndex + 1, history.length)
     if (history.length >= 20) {
       history.shift()
     }
-    // 记录当前位置
     historyIndex = history.length
     history.push(value)
     this.setState({
@@ -180,7 +195,6 @@ class MdEditor extends React.Component<IP, IS> {
     })
   }
 
-  // 重新计算行号
   reLineNum(value: string) {
     const lineIndex = value ? value.split('\n').length : 1
     this.setState({
@@ -188,12 +202,10 @@ class MdEditor extends React.Component<IP, IS> {
     })
   }
 
-  // 保存
   save = (): void => {
     this.props.onSave(this.$vm.current!.value)
   }
 
-  // 撤销
   undo = (): void => {
     let { history, historyIndex } = this.state
     historyIndex = historyIndex - 1
@@ -204,7 +216,6 @@ class MdEditor extends React.Component<IP, IS> {
     })
   }
 
-  // 重做
   redo = (): void => {
     let { history, historyIndex } = this.state
     historyIndex = historyIndex + 1
@@ -215,10 +226,57 @@ class MdEditor extends React.Component<IP, IS> {
     })
   }
 
-  // 菜单点击
   toolBarLeftClick = (type: string): void => {
     const { words } = this.state
     const insertTextObj: any = {
+      bold: {
+        prefix: '** ',
+        subfix: ' **',
+        str: words.bold
+      },
+      italic: {
+        prefix: '* ',
+        subfix: ' *',
+        str: words.italic
+      },
+      qoute: {
+        prefix: '>',
+        subfix: '',
+        str: words.qoute
+      },
+      orderedlist: {
+        prefix: '1. item1 \n 2. item2',
+        subfix: '\n 3. item3',
+        str: words.orderedlist
+      },
+      unorderedlist: {
+        prefix: '* item1\n * item2',
+        subfix: '\n * item3',
+        str: words.unorderedlist
+      },
+      c1: {
+        prefix: '|	Column 1	|\n|	------------	|',
+        subfix: '\n |	     Text     	|',
+        str: words.c1
+      },
+      c2: {
+        prefix: '|	Column 1	|	Column 2	|\n|	------------	|	------------	|',
+        subfix: '\n |	     Text     	|	     Text     	|',
+        str: words.c2
+      },
+      c3: {
+        prefix: '|	Column 1	|	Column 2	|	Column 3	|\n|	------------	|	------------	|	------------	|',
+        subfix: '\n |	     Text     	|	     Text     	|	     Text     	|',
+        str: words.c3
+      },
+      /**
+       * will add emoji
+       */
+      // emoji: {
+      //   prefix: '',
+      //   subfix: '',
+      //   str: words.emoji
+      // },
       h1: {
         prefix: '# ',
         subfix: '',
@@ -278,7 +336,6 @@ class MdEditor extends React.Component<IP, IS> {
     }
   }
 
-  // 添加图片
   addImg = (file: File, index: number) => {
     this.props.addImg(file, index)
   }
@@ -292,7 +349,6 @@ class MdEditor extends React.Component<IP, IS> {
     this.props.onChange(value)
   }
 
-  // 右侧菜单
   toolBarRightClick = (type: string): void => {
     const toolbarRightPreviewClick = () => {
       this.setState({
@@ -346,7 +402,7 @@ class MdEditor extends React.Component<IP, IS> {
     this.$vm.current!.focus()
   }
 
-  handleScoll = (e: React.UIEvent<HTMLDivElement>): void => {
+  handleScroll = (e: React.UIEvent<HTMLDivElement>): void => {
     const radio =
       this.$blockEdit.current!.scrollTop /
       (this.$scrollEdit.current!.scrollHeight - e.currentTarget.offsetHeight)
@@ -358,14 +414,14 @@ class MdEditor extends React.Component<IP, IS> {
     const { preview, expand, subfield, lineIndex, words } = this.state
     const { value, placeholder, fontSize, disabled, height, style, toolbar } = this.props
     const editorClass = classNames({
-      'for-editor-edit': true,
+      'react-post-markdown-edit': true,
       'for-panel': true,
       'for-active': preview && subfield,
       'for-edit-preview': preview && !subfield
     })
     const previewClass = classNames({
       'for-panel': true,
-      'for-editor-preview': true,
+      'react-post-markdown-preview': true,
       'for-active': preview && subfield
     })
     const fullscreen = classNames({
@@ -377,7 +433,6 @@ class MdEditor extends React.Component<IP, IS> {
       hidden: !this.props.lineNum
     })
 
-    // 行号
     function lineNum() {
       const list = []
       for (let i = 0; i < lineIndex; i++) {
@@ -388,7 +443,6 @@ class MdEditor extends React.Component<IP, IS> {
 
     return (
       <div className={fullscreen} style={{ height, ...style }}>
-        {/* 菜单栏 */}
         {Boolean(Object.keys(toolbar).length) && (
           <div className="for-toolbar">
             <ToolbarLeft
@@ -408,18 +462,16 @@ class MdEditor extends React.Component<IP, IS> {
             />
           </div>
         )}
-        {/* 内容区 */}
-        <div className="for-editor" style={{ fontSize }}>
-          {/* 编辑区 */}
+        <div className="react-post-markdown" style={{ fontSize }}>
           <div
             className={editorClass}
             ref={this.$blockEdit}
-            onScroll={this.handleScoll}
+            onScroll={this.handleScroll}
             onClick={this.focusText}
           >
-            <div className="for-editor-block" ref={this.$scrollEdit}>
+            <div className="react-post-markdown-block" ref={this.$scrollEdit}>
               {lineNum()}
-              <div className="for-editor-content">
+              <div className="react-post-markdown-content">
                 <pre>{value} </pre>
                 <textarea
                   ref={this.$vm}
@@ -431,7 +483,6 @@ class MdEditor extends React.Component<IP, IS> {
               </div>
             </div>
           </div>
-          {/* 预览区 */}
           <div className={previewClass} ref={this.$blockPreview}>
             <div
               ref={this.$scrollPreview}

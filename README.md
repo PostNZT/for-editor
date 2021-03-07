@@ -1,6 +1,6 @@
-# for-editor
+# react-post-markdown
 
-> for-editor-A markdown editor based on React
+> react-post-markdown-A markdown editor based on React
 
 - [demo](https://md.kkfor.com)
 - [github](https://github.com/PostNZT/react-post-toolbar)
@@ -8,7 +8,7 @@
 ### Install
 
 ```js
-npm install for-editor -S
+npm install react-post-markdown -S
 ```
 
 ### Use
@@ -16,7 +16,7 @@ npm install for-editor -S
 ```js
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Editor from 'for-editor'
+import Editor from 'react-post-markdown'
 
 class App extends Component {
   constructor() {
@@ -151,8 +151,8 @@ class App extends Component {
 
 # Licence
 
-for-editor is [MIT Licence](./LICENSE).
+react-post-markdown is [MIT Licence](./LICENSE).
 
 # Credits to:
 > kkfor
-Forked at for-editor [https://github.com/kkfor/for-editor] 
+Forked at react-post-markdown [https://github.com/kkfor/react-post-markdown] 

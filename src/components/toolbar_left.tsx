@@ -9,6 +9,7 @@ interface IP {
 
 interface IS {
   imgHidden: boolean
+  headerHidden: boolean,
   imgList: File[]
 }
 
@@ -26,6 +27,7 @@ class Toolbars extends React.Component<IP, IS> {
 
     this.state = {
       imgHidden: true,
+      headerHidden: true,
       imgList: []
     }
   }
@@ -55,6 +57,21 @@ class Toolbars extends React.Component<IP, IS> {
     }, 150)
   }
 
+  headerMouseOverHeader() {
+    window.clearTimeout(this.timer)
+    this.setState({
+      headerHidden: false
+    })
+  }
+
+  headerMouseOutHeader() {
+    this.timer = window.setTimeout(() => {
+      this.setState({
+        headerHidden: true
+      })
+    }, 150)
+  }
+
   addImgUrl() {
     this.props.onClick('img')
   }
@@ -73,6 +90,7 @@ class Toolbars extends React.Component<IP, IS> {
   render() {
     const { toolbar, words } = this.props
     const { imgHidden } = this.state
+    const { headerHidden } = this.state
     return (
       <ul>
         {toolbar.undo && (
@@ -85,24 +103,41 @@ class Toolbars extends React.Component<IP, IS> {
             <i className="foricon for-redo" />
           </li>
         )}
-        {toolbar.h1 && (
-          <li onClick={() => this.onClick('h1')} title={words.h1}>
-            H1
+        {toolbar && (
+          <li className="for-toolbar-header" onMouseOver={() => this.headerMouseOverHeader()} onMouseOut={() => this.headerMouseOutHeader()}>
+            <li>H</li>
+            <ul style={headerHidden ? {display: 'none'} : {}}>
+              {toolbar.h1 && (
+                <li onClick={() => this.onClick('h1')} title={words.h1}>
+                  H1
+                </li>
+              )}
+              {toolbar.h2 && (
+                <li onClick={() => this.onClick('h2')} title={words.h2}>
+                  H2
+                </li>
+              )}
+              {toolbar.h3 && (
+                <li onClick={() => this.onClick('h3')} title={words.h3}>
+                  H3
+                </li>
+              )}
+              {toolbar.h4 && (
+                <li onClick={() => this.onClick('h4')} title={words.h4}>
+                  H4
+                </li>
+              )}
+            </ul>
           </li>
         )}
-        {toolbar.h2 && (
-          <li onClick={() => this.onClick('h2')} title={words.h2}>
-            H2
+        {toolbar.link && (
+          <li onClick={() => this.onClick('link')} title={words.link}>
+            <i className="foricon for-link" />
           </li>
         )}
-        {toolbar.h3 && (
-          <li onClick={() => this.onClick('h3')} title={words.h3}>
-            H3
-          </li>
-        )}
-        {toolbar.h4 && (
-          <li onClick={() => this.onClick('h4')} title={words.h4}>
-            H4
+        {toolbar.code && (
+          <li onClick={() => this.onClick('code')} title={words.code}>
+            <i className="foricon for-code" />
           </li>
         )}
         {toolbar.img && (
@@ -115,16 +150,6 @@ class Toolbars extends React.Component<IP, IS> {
                 <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" onChange={(e) => this.addImgFile(e)}/>
               </li>
             </ul>
-          </li>
-        )}
-        {toolbar.link && (
-          <li onClick={() => this.onClick('link')} title={words.link}>
-            <i className="foricon for-link" />
-          </li>
-        )}
-        {toolbar.code && (
-          <li onClick={() => this.onClick('code')} title={words.code}>
-            <i className="foricon for-code" />
           </li>
         )}
         {toolbar.save && (

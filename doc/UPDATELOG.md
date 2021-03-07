@@ -1,21 +1,21 @@
 - 2019-12-11 v0.3.5
-  - 修复双栏，预览，全屏bug [#45](https://github.com/kkfor/for-editor/pull/45)
+  - 修复双栏，预览，全屏bug [#45](https://github.com/kkfor/react-post-markdown/pull/45)
 - 2019-08-20 v0.3.4
-  - 修复typescrit定义问题 [#36](https://github.com/kkfor/for-editor/issues/35)
+  - 修复typescrit定义问题 [#36](https://github.com/kkfor/react-post-markdown/issues/35)
 - 2019-08-20 v0.3.2
   - 修复图片上传bug
-  - 优化typescript d.ts声明 [#35](https://github.com/kkfor/for-editor/issues/35)
+  - 优化typescript d.ts声明 [#35](https://github.com/kkfor/react-post-markdown/issues/35)
 - 2019-08-19 v0.3.1
-  - 添加图片上传功能 [#32](https://github.com/kkfor/for-editor/issues/32)
+  - 添加图片上传功能 [#32](https://github.com/kkfor/react-post-markdown/issues/32)
   - 优化代码
 - 2019-07-05 v0.3.0
-  - 添加d.ts声明文件，修复bug [#27](https://github.com/kkfor/for-editor/issues/27)
+  - 添加d.ts声明文件，修复bug [#27](https://github.com/kkfor/react-post-markdown/issues/27)
 - 2019-07-03 v0.2.9
-  - 修复bug [#26](https://github.com/kkfor/for-editor/issues/26)
+  - 修复bug [#26](https://github.com/kkfor/react-post-markdown/issues/26)
 - 2019-07-03 v0.2.8
   - 新增预览设置，支持中文、英文
 - 2019-07-01 v0.2.7
-  - 修复bug [#24](https://github.com/kkfor/for-editor/issues/24)
+  - 修复bug [#24](https://github.com/kkfor/react-post-markdown/issues/24)
   - 优化样式
 - 2019-06-21 v0.2.6
   - 优化一些样式
