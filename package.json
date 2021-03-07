@@ -1,5 +1,5 @@
 {
-  "name": "react-post-markdown",
+  "name": "react-postnzt-markdown",
   "version": "1.0.0",
   "description": "react markdown editor",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PostNZT/react-post-markdown"
+    "url": "git+https://github.com/PostNZT/react-postnzt-markdown"
   },
   "keywords": [
     "javascript",
@@ -23,14 +23,14 @@
   "author": "postnzt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PostNZT/react-post-markdown"
+    "url": "https://github.com/PostNZT/react-postnzt-markdown"
   },
   "files": [
     "dist/",
     "index.d.ts",
     "LICENSE"
   ],
-  "homepage": "https://github.com/PostNZT/react-post-markdown#readme",
+  "homepage": "https://github.com/PostNZT/react-postnzt-markdown#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",

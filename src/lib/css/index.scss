@@ -203,7 +203,7 @@
     }
   }
 
-  .react-post-markdown {
+  .react-postnzt-markdown {
     display: flex;
     justify-content: space-between;
     height: 100%;
@@ -229,7 +229,7 @@
       }
     }
 
-    .react-post-markdown-edit {
+    .react-postnzt-markdown-edit {
       line-height: 1.6;
       height: 100%;
 
@@ -237,7 +237,7 @@
         width: 0;
         flex: 0 0 0;
       }
-      .react-post-markdown-block {
+      .react-postnzt-markdown-block {
         display: flex;
         min-height: 100%;
       }
@@ -256,7 +256,7 @@
         }
       }
 
-      .react-post-markdown-content {
+      .react-postnzt-markdown-content {
         flex: 1;
         position: relative;
         height: 100%;

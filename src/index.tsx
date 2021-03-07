@@ -410,14 +410,14 @@ class MdEditor extends React.Component<IP, IS> {
     const { preview, expand, subfield, lineIndex, words } = this.state
     const { value, placeholder, fontSize, disabled, height, style, toolbar } = this.props
     const editorClass = classNames({
-      'react-post-markdown-edit': true,
+      'react-postnzt-markdown-edit': true,
       'for-panel': true,
       'for-active': preview && subfield,
       'for-edit-preview': preview && !subfield
     })
     const previewClass = classNames({
       'for-panel': true,
-      'react-post-markdown-preview': true,
+      'react-postnzt-markdown-preview': true,
       'for-active': preview && subfield
     })
     const fullscreen = classNames({
@@ -458,16 +458,16 @@ class MdEditor extends React.Component<IP, IS> {
             />
           </div>
         )}
-        <div className="react-post-markdown" style={{ fontSize }}>
+        <div className="react-postnzt-markdown" style={{ fontSize }}>
           <div
             className={editorClass}
             ref={this.$blockEdit}
             onScroll={this.handleScroll}
             onClick={this.focusText}
           >
-            <div className="react-post-markdown-block" ref={this.$scrollEdit}>
+            <div className="react-postnzt-markdown-block" ref={this.$scrollEdit}>
               {lineNum()}
-              <div className="react-post-markdown-content">
+              <div className="react-postnzt-markdown-content">
                 <pre>{value} </pre>
                 <textarea
                   ref={this.$vm}

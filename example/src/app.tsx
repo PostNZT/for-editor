@@ -69,11 +69,11 @@ class App extends Component<{}, IS> {
     return (
       <div className={styles.main}>
         <div className={styles.top}>
-          <h1>react-post-markdown</h1>
+          <h1>react-postnzt-markdown</h1>
           <ul>
             <li>
               <a
-                href="https://github.com/PostNZT/react-post-markdown"
+                href="https://github.com/PostNZT/react-postnzt-markdown"
                 target="_blank"
                 rel="noopener noreferrer"
               >

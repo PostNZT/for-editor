@@ -1,17 +1,17 @@
-> `react-post-markdown` is a markdown editor
+> `react-postnzt-markdown` is a markdown editor
 
-# react-post-markdown
-
-this is a markdown editor
-
-## react-post-markdown
+# react-postnzt-markdown
 
 this is a markdown editor
 
-### react-post-markdown
+## react-postnzt-markdown
+
+this is a markdown editor
+
+### react-postnzt-markdown
 
 ```js
-const editor = 'react-post-markdown'
+const editor = 'react-postnzt-markdown'
 ```
 
 - item1
@@ -31,4 +31,4 @@ const editor = 'react-post-markdown'
 
 | title      | description     |
 | ---------- | --------------- |
-| react-post-markdown | markdown editor |
+| react-postnzt-markdown | markdown editor |
