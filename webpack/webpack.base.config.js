@@ -1,6 +1,7 @@
 // const isProd = process.env.NODE_ENV === 'production'
 const isDev = process.env.NODE_ENV === 'development'
 
+
 module.exports = {
   entry: './example/index.tsx',
   devtool: isDev && 'source-map',

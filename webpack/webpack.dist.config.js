@@ -13,4 +13,5 @@ module.exports = merge(webpackBaseConfig, {
     libraryTarget: 'umd'
   },
   plugins: [new CleanWebpackPlugin()]
+  
 })

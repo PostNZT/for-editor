@@ -26,4 +26,5 @@ module.exports = merge(webpackBaseConfig, {
     port: 3020,
     hot: true
   }
+  
 })
