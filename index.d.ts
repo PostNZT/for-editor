@@ -86,4 +86,5 @@ declare class MdEditor extends React.Component<IP, IS> {
     private $blockPreview;
     private currentTimeout;
 }
+
 export default MdEditor
