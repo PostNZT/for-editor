@@ -1,6 +1,6 @@
 # react-post-markdown
 
-> react-post-markdown-A markdown editor based on React
+> react-post-markdown A markdown editor based on React
 
 - [demo](https://md.kkfor.com)
 - [github](https://github.com/PostNZT/react-post-toolbar)
