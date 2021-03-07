@@ -1,19 +1,17 @@
 # for-editor
 
-> for-editor 是一个基于 react 的 markdown 语法编辑器
-
-### [English Documents](./README.EN.md)
+> for-editor-A markdown editor based on React
 
 - [demo](https://md.kkfor.com)
 - [github](https://github.com/kkfor/for-editor)
 
-### 安装
+### Install
 
 ```js
 npm install for-editor -S
 ```
 
-### 使用
+### Use
 
 ```js
 import React, { Component } from 'react'
@@ -45,68 +43,69 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 ### Api
 
-#### 属性
+#### props
 
-| name        | type    | default     | description                        |
-| ----------- | ------- | ----------- | ---------------------------------- |
-| value       | String  | -           | 输入框内容                         |
-| placeholder | String  | 开始编辑... | 占位文本                           |
-| lineNum     | Boolean | true        | 是否显示行号                       |
-| style       | Object  | -           | 编辑器样式                         |
-| height      | String  | 600px       | 编辑器高度                         |
-| preview     | Boolean | false       | 预览模式                           |
-| expand      | Boolean | false       | 全屏模式                           |
-| subfield    | Boolean | false       | 双栏模式(预览模式激活下有效)       |
-| language    | String  | zh-CN       | 语言(支持 zh-CN:中文简体, en:英文) |
-| toolbar     | Object  | 如下        | 自定义工具栏                       |
+| name        | type    | default                     | description                                                                                            |
+| ----------- | ------- | --------------------------- | ------------------------------------------------------------------------------------------------------ |
+| value       | String  | -                           | value                                                                                                  |
+| language    | String  | zh-CN                       | Language switch, zh-CN: Simplified Chinese, en: English                                                |
+| placeholder | String  | Begin editing...            | The default prompt text when the textarea is empty                                                     |
+| lineNum     | Boolean | true                        | Show lineNum                                                                                           |
+| style       | Object  | -                           | editor styles                                                                                          |
+| height      | String  | 600px                       | editor height                                                                                          |
+| preview     | Boolean | false                       | preview switch                                                                                         |
+| expand      | Boolean | false                       | fullscreen switch                                                                                      |
+| subfield    | Boolean | false                       | true: Double columns - Edit preview same screen(notice: preview: true), Single Columns - otherwise not |
+| toolbar     | Object  | As in the following example | toolbars                                                                                               |
 
 ```js
 /*
-  默认工具栏按钮全部开启, 传入自定义对象
-  例如: {
-    h1: true, // h1
-    code: true, // 代码块
-    preview: true, // 预览
+  The default toolbar properties are all true,
+  You can customize the object to cover them.
+  eg: {
+    h1: true,
+    code: true,
+    preview: true,
   }
-  此时, 仅仅显示此三个功能键
-  注:传入空对象则不显示工具栏
+  At this point, the toolbar only displays the three function keys.
+  notice: Toolbar will be hidden when empty object.
  */
 
 toolbar: {
-  h1: true, // h1
-  h2: true, // h2
-  h3: true, // h3
-  h4: true, // h4
-  img: true, // 图片
-  link: true, // 链接
-  code: true, // 代码块
-  preview: true, // 预览
-  expand: true, // 全屏
+  h1: true,
+  h2: true,
+  h3: true,
+  h4: true,
+  img: true,
+  link: true,
+  code: true,
+  preview: true,
+  expand: true,
   /* v0.0.9 */
-  undo: true, // 撤销
-  redo: true, // 重做
-  save: true, // 保存
+  undo: true,
+  redo: true,
+  save: true,
   /* v0.2.3 */
-  subfield: true, // 单双栏模式
+  subfield: true
 }
 ```
 
-#### 事件
+#### events
 
-| name     | params 参数   | default | description    |
-| -------- | ------------- | ------- | -------------- |
-| onChange | String: value | -       | 内容改变时回调 |
-| onSave   | String: value | -       | 保存时回调     |
-| addImg   | File: file    | -       | 添加图片时回调 |
+| name     | params        | default | description                                 |
+| -------- | ------------- | ------- | ------------------------------------------- |
+| onChange | String: value | -       | Edit area change callback event             |
+| onSave   | String: value | -       | Ctrl+s and click save button callback event |
+| addImg   | File: file    | -       | upload image callback event                 |
 
-##### 图片上传
+##### upload image
 
 ```js
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      value: '',
+      value: ''
     }
     this.$vm = React.createRef()
   }
@@ -130,26 +129,26 @@ class App extends Component {
         ref={this.$vm}
         value={value}
         addImg={($file) => this.addImg($file)}
-        onChange={value => this.handleChange(value)}
+        onChange={(value) => this.handleChange(value)}
       />
     )
   }
 }
 ```
 
-#### 快捷键
+#### hot key
 
-| name   | description  |
-| ------ | ------------ |
-| tab    | 两个空格缩进 |
-| ctrl+s | 保存         |
-| ctrl+z | 上一步       |
-| ctrl+y | 下一步       |
+| name   | description |
+| ------ | ----------- |
+| tab    | two space   |
+| ctrl+s | save        |
+| ctrl+z | undo        |
+| ctrl+y | redo        |
 
-### 更新
+### Update
 
 - [Update Log](./doc/UPDATELOG.md)
 
-### Licence
+# Licence
 
 for-editor is [MIT Licence](./LICENSE).
