@@ -1,6 +1,6 @@
 {
-  "name": "for-editor",
-  "version": "0.3.5",
+  "name": "react-post-toolbar",
+  "version": "1.0.0",
   "description": "react markdown editor",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kkfor/for-editor.git"
+    "url": "git+https://github.com/PostNZT/react-post-toolbar"
   },
   "keywords": [
     "javascript",
@@ -20,17 +20,17 @@
     "markdown",
     "editor"
   ],
-  "author": "kkfor",
+  "author": "postnzt",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kkfor/for-editor/issues"
+    "url": "https://github.com/PostNZT/react-post-toolbar"
   },
   "files": [
     "dist/",
     "index.d.ts",
     "LICENSE"
   ],
-  "homepage": "https://github.com/kkfor/for-editor#readme",
+  "homepage": "https://github.com/PostNZT/react-post-toolbar#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.2.3",

@@ -3,7 +3,7 @@
 > for-editor-A markdown editor based on React
 
 - [demo](https://md.kkfor.com)
-- [github](https://github.com/kkfor/for-editor)
+- [github](https://github.com/PostNZT/react-post-toolbar)
 
 ### Install
 
@@ -152,3 +152,7 @@ class App extends Component {
 # Licence
 
 for-editor is [MIT Licence](./LICENSE).
+
+# Credits to:
+> kkfor
+Forked at for-editor [https://github.com/kkfor/for-editor] 
