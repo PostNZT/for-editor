@@ -9,7 +9,7 @@ interface IP {
 
 interface IS {
   imgHidden: boolean
-  headerHidden: boolean,
+  headerHidden: boolean
   imgList: File[]
 }
 
