@@ -1,5 +1,5 @@
 {
-  "name": "react-post-toolbar",
+  "name": "react-post-markdown",
   "version": "1.0.0",
   "description": "react markdown editor",
   "main": "dist/index.js",
