@@ -10,6 +10,7 @@ interface IP {
 interface IS {
   imgHidden: boolean
   headerHidden: boolean
+  tableHidden: boolean
   imgList: File[]
 }
 
@@ -28,6 +29,7 @@ class Toolbars extends React.Component<IP, IS> {
     this.state = {
       imgHidden: true,
       headerHidden: true,
+      tableHidden: true,
       imgList: []
     }
   }
@@ -72,6 +74,21 @@ class Toolbars extends React.Component<IP, IS> {
     }, 150)
   }
 
+  tableMouseOverHeader() {
+    window.clearTimeout(this.timer)
+    this.setState({
+      tableHidden: false
+    })
+  }
+
+  tableMouseOutHeader() {
+    this.timer = window.setTimeout(() => {
+      this.setState({
+        tableHidden: true
+      })
+    }, 150)
+  }
+
   addImgUrl() {
     this.props.onClick('img')
   }
@@ -91,6 +108,7 @@ class Toolbars extends React.Component<IP, IS> {
     const { toolbar, words } = this.props
     const { imgHidden } = this.state
     const { headerHidden } = this.state
+    const { tableHidden } = this.state
     return (
       <ul>
         {toolbar.undo && (
@@ -103,41 +121,66 @@ class Toolbars extends React.Component<IP, IS> {
             <i className="foricon for-redo" />
           </li>
         )}
+        {toolbar.bold && (
+          <li onClick={() => this.onClick('bold')} title={words.bold}>
+            <a className="posticon post-bold" />
+          </li>
+        )}
+        {toolbar.italic && (
+          <li onClick={() => this.onClick('italic')} title={words.italic}>
+            <a className="posticon post-italic" />
+          </li>
+        )}
         {toolbar && (
-          <li className="for-toolbar-header" onMouseOver={() => this.headerMouseOverHeader()} onMouseOut={() => this.headerMouseOutHeader()}>
+          <li className="for-toolbar-header" style={{ fontSize: '1.3em' }} onMouseOver={() => this.headerMouseOverHeader()} onMouseOut={() => this.headerMouseOutHeader()}>
             <li>H</li>
             <ul style={headerHidden ? {display: 'none'} : {}}>
               {toolbar.h1 && (
-                <li onClick={() => this.onClick('h1')} title={words.h1}>
+                <li style={{ fontSize: '0.8em' }} onClick={() => this.onClick('h1')} title={words.h1}>
                   H1
                 </li>
               )}
               {toolbar.h2 && (
-                <li onClick={() => this.onClick('h2')} title={words.h2}>
+                <li style={{ fontSize: '0.8em' }} onClick={() => this.onClick('h2')} title={words.h2}>
                   H2
                 </li>
               )}
               {toolbar.h3 && (
-                <li onClick={() => this.onClick('h3')} title={words.h3}>
+                <li style={{ fontSize: '0.8em' }} onClick={() => this.onClick('h3')} title={words.h3}>
                   H3
                 </li>
               )}
               {toolbar.h4 && (
-                <li onClick={() => this.onClick('h4')} title={words.h4}>
+                <li style={{ fontSize: '0.8em' }} onClick={() => this.onClick('h4')} title={words.h4}>
                   H4
                 </li>
               )}
             </ul>
           </li>
         )}
+        {toolbar.code && (
+          <li onClick={() => this.onClick('code')} title={words.code}>
+            <i className="posticon post-code-1" />
+          </li>
+        )}
+        {toolbar.qoute && (
+          <li onClick={() => this.onClick('qoute')} title={words.qoute}>
+            <i className="posticon post-quote-right" />
+          </li>
+        )}
+        {toolbar.orderedlist && (
+          <li onClick={() => this.onClick('orderedlist')} title={words.orderedlist}>
+            <i className="posticon post-list-numbered-1" />
+          </li>
+        )}
+        {toolbar.unorderedlist && (
+          <li onClick={() => this.onClick('unorderedlist')} title={words.unorderedlist}>
+            <i className="posticon post-list-bullet" />
+          </li>
+        )}
         {toolbar.link && (
           <li onClick={() => this.onClick('link')} title={words.link}>
             <i className="foricon for-link" />
-          </li>
-        )}
-        {toolbar.code && (
-          <li onClick={() => this.onClick('code')} title={words.code}>
-            <i className="foricon for-code" />
           </li>
         )}
         {toolbar.img && (
@@ -149,6 +192,28 @@ class Toolbars extends React.Component<IP, IS> {
                 {words.addImg}
                 <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" onChange={(e) => this.addImgFile(e)}/>
               </li>
+            </ul>
+          </li>
+        )}
+        {toolbar && (
+          <li className="for-toolbar-table" style={{ fontSize: '1.3em' }} onMouseOver={() => this.tableMouseOverHeader()} onMouseOut={() => this.tableMouseOutHeader()}>
+            <i className="posticon post-table" />
+            <ul style={tableHidden ? {display: 'none'} : {}}>
+              {toolbar.h1 && (
+                <li style={{ fontSize: '0.8em' }} onClick={() => this.onClick('c1')} title={words.h1}>
+                  1 Column
+                </li>
+              )}
+              {toolbar.h2 && (
+                <li style={{ fontSize: '0.8em' }} onClick={() => this.onClick('c2')} title={words.h2}>
+                  2 Column
+                </li>
+              )}
+              {toolbar.h3 && (
+                <li style={{ fontSize: '0.8em' }} onClick={() => this.onClick('c3')} title={words.h3}>
+                  3 Column
+                </li>
+              )}
             </ul>
           </li>
         )}

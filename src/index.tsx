@@ -7,6 +7,7 @@ import ToolbarRight from './components/toolbar_right'
 import { insertText } from './lib/helpers/function'
 import 'highlight.js/styles/tomorrow.css'
 import './lib/fonts/iconfont.css'
+import './lib/fonts/posticon.css'
 import './lib/css/index.scss'
 import { CONFIG } from './lib'
 
@@ -230,44 +231,39 @@ class MdEditor extends React.Component<IP, IS> {
     const { words } = this.state
     const insertTextObj: any = {
       bold: {
-        prefix: '** ',
-        subfix: ' **',
+        prefix: ' **',
+        subfix: '** ',
         str: words.bold
       },
       italic: {
-        prefix: '* ',
-        subfix: ' *',
+        prefix: ' *',
+        subfix: '* ',
         str: words.italic
       },
       qoute: {
-        prefix: '>',
+        prefix: ' >',
         subfix: '',
         str: words.qoute
       },
       orderedlist: {
-        prefix: '1. item1 \n 2. item2',
-        subfix: '\n 3. item3',
-        str: words.orderedlist
+        prefix: '1. item1 \n2. item2',
+        subfix: '\n3. item3 ',
       },
       unorderedlist: {
-        prefix: '* item1\n * item2',
-        subfix: '\n * item3',
-        str: words.unorderedlist
+        prefix: '* item1\n* item2',
+        subfix: '\n* item3 ',
       },
       c1: {
         prefix: '|	Column 1	|\n|	------------	|',
-        subfix: '\n |	     Text     	|',
-        str: words.c1
+        subfix: '\n |	     Text     	| ',
       },
       c2: {
         prefix: '|	Column 1	|	Column 2	|\n|	------------	|	------------	|',
-        subfix: '\n |	     Text     	|	     Text     	|',
-        str: words.c2
+        subfix: '\n |	     Text     	|	     Text     	| ',
       },
       c3: {
         prefix: '|	Column 1	|	Column 2	|	Column 3	|\n|	------------	|	------------	|	------------	|',
         subfix: '\n |	     Text     	|	     Text     	|	     Text     	|',
-        str: words.c3
       },
       /**
        * will add emoji
@@ -305,7 +301,7 @@ class MdEditor extends React.Component<IP, IS> {
       link: {
         prefix: '[title](',
         subfix: ')',
-        str: 'url'
+        str: 'https://'
       },
       code: {
         prefix: '```',

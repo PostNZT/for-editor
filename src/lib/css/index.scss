@@ -55,6 +55,50 @@
         border-radius: 4px;
         line-height: normal;
 
+        &.for-toolbar-table {
+          position: relative;
+
+          > ul {
+            position: absolute;
+            top: 100%;
+            left: -15px;
+            width: 100px;
+            margin-top: 4px;
+            background: #fff;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0 2px 8px 0;
+            z-index: 99;
+            line-height: 2.8;
+            text-align: center;
+
+            li {
+              position: relative;
+
+              &:hover {
+                background: #e9e9e9;
+              }
+
+              &:first-child {
+                border-radius: 4px 4px 0 0;
+              }
+
+              &:last-child {
+                border-radius: 0 0 4px 4px;
+              }
+
+              input {
+                position: absolute;
+                width: 100%;
+                opacity: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
         &.for-toolbar-header {
           position: relative;
 
@@ -153,7 +197,7 @@
         }
 
         i {
-          font-size: 1.2em;
+          font-size: 1.3em !important;
         }
       }
     }
