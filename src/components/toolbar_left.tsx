@@ -123,12 +123,12 @@ class Toolbars extends React.Component<IP, IS> {
         )}
         {toolbar.bold && (
           <li onClick={() => this.onClick('bold')} title={words.bold}>
-            <a className="posticon post-bold" />
+            <i className="posticon post-bold" />
           </li>
         )}
         {toolbar.italic && (
           <li onClick={() => this.onClick('italic')} title={words.italic}>
-            <a className="posticon post-italic" />
+            <i className="posticon post-italic" />
           </li>
         )}
         {toolbar && (
