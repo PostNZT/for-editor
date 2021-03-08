@@ -104,7 +104,8 @@
         &.for-toolbar-header {
           position: relative;
           text-decoration: none;
-
+          list-style-type: none !important;
+          
           > ul {
             list-style-type: none !important;
             position: absolute;

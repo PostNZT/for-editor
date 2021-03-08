@@ -92,7 +92,7 @@ toolbar: {
   redo: true,
   save: true,
   subfield: true
-  /** emoji feature will be added on v1.0.5*/
+  /** emoji feature will be added on v1.0.7*/
 }
 ```
 
