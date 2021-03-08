@@ -1,13 +1,13 @@
-# react-postnztnzt-markdown
+# react-postnzt-markdown
 
-> react-postnztnzt-markdown A markdown editor based on React
+> react-postnzt-markdown A markdown editor based on React
 
-- [github](https://github.com/PostNZT/react-postnztnzt-toolbar)
+- [github](https://github.com/PostNZT/react-postnzt-toolbar)
 
 ### Install
 
 ```js
-npm install react-postnztnzt-markdown --save
+npm install react-postnzt-markdown --save
 ```
 
 ### Use
@@ -15,7 +15,7 @@ npm install react-postnztnzt-markdown --save
 ```js
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Editor from 'react-postnztnzt-markdown'
+import Editor from 'react-postnzt-markdown'
 
 class App extends Component {
   constructor() {
@@ -154,4 +154,4 @@ react-postnzt-markdown is [MIT Licence](./LICENSE).
 
 # Credits to:
 > kkfor
-Forked at react-postnzt-markdown [https://github.com/kkfor/react-postnzt-markdown] 
+Forked at for-editor [https://github.com/kkfor/for-editor] 
