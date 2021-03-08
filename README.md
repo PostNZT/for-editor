@@ -2,7 +2,7 @@
 
 > react-postnzt-markdown A markdown editor based on React
 
-- [github](https://github.com/PostNZT/react-postnzt-toolbar)
+- [github](https://github.com/PostNZT/react-postnzt-markdown)
 
 ### Install
 
