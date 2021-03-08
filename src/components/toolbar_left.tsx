@@ -132,7 +132,7 @@ class Toolbars extends React.Component<IP, IS> {
           </li>
         )}
         {toolbar && (
-          <li className="for-toolbar-header" style={{ fontSize: '1.3em' }} onMouseOver={() => this.headerMouseOverHeader()} onMouseOut={() => this.headerMouseOutHeader()}>
+          <li className="for-toolbar-header" style={{ fontSize: '1.3em', textDecoration: 'none !important' }} onMouseOver={() => this.headerMouseOverHeader()} onMouseOut={() => this.headerMouseOutHeader()}>
             <li>H</li>
             <ul style={headerHidden ? {display: 'none'} : {}}>
               {toolbar.h1 && (
@@ -196,7 +196,7 @@ class Toolbars extends React.Component<IP, IS> {
           </li>
         )}
         {toolbar && (
-          <li className="for-toolbar-table" style={{ fontSize: '1.3em' }} onMouseOver={() => this.tableMouseOverHeader()} onMouseOut={() => this.tableMouseOutHeader()}>
+          <li className="for-toolbar-table" style={{ fontSize: '1.3em', textDecoration: 'none !important' }} onMouseOver={() => this.tableMouseOverHeader()} onMouseOut={() => this.tableMouseOutHeader()}>
             <i className="posticon post-table" />
             <ul style={tableHidden ? {display: 'none'} : {}}>
               {toolbar.h1 && (

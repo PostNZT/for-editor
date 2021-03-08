@@ -255,15 +255,15 @@ class MdEditor extends React.Component<IP, IS> {
       },
       c1: {
         prefix: '|	Column 1	|\n|	------------	|',
-        subfix: '\n |	     Text     	| ',
+        subfix: '\n|	     Text     	| ',
       },
       c2: {
         prefix: '|	Column 1	|	Column 2	|\n|	------------	|	------------	|',
-        subfix: '\n |	     Text     	|	     Text     	| ',
+        subfix: '\n|	     Text     	|	     Text     	| ',
       },
       c3: {
         prefix: '|	Column 1	|	Column 2	|	Column 3	|\n|	------------	|	------------	|	------------	|',
-        subfix: '\n |	     Text     	|	     Text     	|	     Text     	|',
+        subfix: '\n|	     Text     	|	     Text     	|	     Text     	|',
       },
       /**
        * will add emoji

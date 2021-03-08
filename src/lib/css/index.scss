@@ -73,7 +73,7 @@
 
             li {
               position: relative;
-              text-decoration: none;
+              text-decoration: none !important;
 
               &:hover {
                 background: #e9e9e9;

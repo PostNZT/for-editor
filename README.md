@@ -47,8 +47,8 @@ ReactDOM.render(<App />, document.getElementById('root'))
 | name        | type    | default                     | description                                                                                            |
 | ----------- | ------- | --------------------------- | ------------------------------------------------------------------------------------------------------ |
 | value       | String  | -                           | value                                                                                                  |
-| language    | String  | zh-CN                       | Language switch, zh-CN: Simplified Chinese, en: English                                                |
-| placeholder | String  | Begin editing...            | The default prompt text when the textarea is empty                                                     |
+| language    | String  | en                       | Language switch, zh-CN: Simplified Chinese, en: English                                                |
+| placeholder | String  | What is in your mind?...            | The default prompt text when the textarea is empty                                                     |
 | lineNum     | Boolean | true                        | Show lineNum                                                                                           |
 | style       | Object  | -                           | editor styles                                                                                          |
 | height      | String  | 600px                       | editor height                                                                                          |
@@ -71,6 +71,14 @@ ReactDOM.render(<App />, document.getElementById('root'))
  */
 
 toolbar: {
+  bold: true,
+  italic: true,
+  qoute: true,
+  orderedlist: true,
+  unorderedlist: true,
+  c1: true,
+  c2: true,
+  c3: true,
   h1: true,
   h2: true,
   h3: true,
@@ -80,12 +88,11 @@ toolbar: {
   code: true,
   preview: true,
   expand: true,
-  /* v0.0.9 */
   undo: true,
   redo: true,
   save: true,
-  /* v0.2.3 */
   subfield: true
+  /** emoji feature will be added on v1.0.5*/
 }
 ```
 
