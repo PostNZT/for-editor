@@ -60,6 +60,7 @@
 
           > ul {
             position: absolute;
+            list-style-type: none !important;
             top: 100%;
             left: -15px;
             width: 100px;
@@ -105,6 +106,7 @@
           text-decoration: none;
 
           > ul {
+            list-style-type: none !important;
             position: absolute;
             top: 100%;
             left: -15px;
@@ -149,6 +151,7 @@
           position: relative;
 
           > ul {
+            list-style-type: none !important;
             position: absolute;
             top: 100%;
             left: -50px;
@@ -200,6 +203,7 @@
 
         i {
           text-decoration: none;
+          list-style-type: none;
           font-size: 1.1em !important;
         }
       }
