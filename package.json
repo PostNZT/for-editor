@@ -1,6 +1,6 @@
 {
   "name": "react-postnzt-markdown",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "react markdown editor",
   "main": "dist/index.js",
   "scripts": {
